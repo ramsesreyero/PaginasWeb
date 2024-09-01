@@ -62,6 +62,6 @@ En este momento, no estoy trabajando, pero en ocasiones amigos o amigos de amigo
 1. [Presentación Personal](#presentación-personal)
 2. [Sobre Mí](#sobre-mí)
 3. [Pasatiempos y Hobbies](#pasatiempos-y-hobbies)
-4. [Habilidades Técnicas](#habilidades-técnicas)
+4. [Lenguajes de Programación que he llegado a utilizar](#Lenguajes-de-Programación-que-he-llegado-a-utilizar)
 5. [Gustos Musicales y Cinematográficos](#gustos-musicales-y-cinematográficos)
 6. [Situación Laboral](#situación-laboral)
