@@ -43,10 +43,15 @@ Me gusta escuchar música de una gran variedad de géneros y disfruto de todo ti
   - **[Rec] (2007)**
   - **Las Ventajas de Ser Invisible (2012)**
   - **El Caballero de la Noche (2008)**
-  
+
   <br>
+
  > “El amor es lo único que somos capaces de percibir que trasciende las dimensiones del tiempo y del espacio.”  
  > — Interstellar (2014)
+  
+  
+  <br>
+    
 
 ## Situación Laboral
 En este momento, no estoy trabajando, pero en ocasiones amigos o amigos de amigos me contactan para mis servicios de edición de video, lo que me sirve como fuente de ingresos.
