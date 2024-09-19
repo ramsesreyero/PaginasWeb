@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<style>
+.grid-container{
+    display: grid;
+width: 100vw;
+height: 100vh;
+grid-template-columns: 20% 80%;
+grid-template-rows: 10% 80% 10%;
+grid-template-areas: "enca enca"
+                    "barra conte"
+                    "piepag piepag";
+}
+#contenedor1{grid-area: enca; background-color: antiquewhite;}
+#contenedor2{grid-area: barra; background-color: yellow;}
+#contenedor3{grid-area: conte; background-color: orange;}
+#contenedor4{grid-area: piepag; background-color: purple;}
+
+</style>
+<body>
+    <div class="grid-container">
+        <div id="contenedor1">1</div>
+        <div id="contenedor2">2</div>
+        <div id="contenedor3">3</div>
+        <div id="contenedor4">4</div>
+    </div>
+</body>
+</html>
