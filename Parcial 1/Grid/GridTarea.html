@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-columns: 15% 1fr 15%;
+            grid-template-rows: 10% 1fr 10%;
+            grid-template-areas: 
+                "header header header"
+                "sidebar main widgets"
+                "footer footer footer";
+        }
+        #header {
+            grid-area: header;
+            background-color: lightblue;
+        }
+        #sidebar {
+            grid-area: sidebar;
+            background-color: lightcoral;
+        }
+        #main {
+            grid-area: main;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                "main-top"
+                "main-bottom";
+            background-color: lightgoldenrodyellow;
+        }
+        #main-top {
+            grid-area: main-top;
+            background-color: lightgreen;
+        }
+        #main-bottom {
+            grid-area: main-bottom;
+            background-color: lightpink;
+        }
+        #widgets {
+            grid-area: widgets;
+            background-color: lightgray;
+        }
+        #footer {
+            grid-area: footer;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div id="header">Header</div>
+        <div id="sidebar">Sidebar</div>
+        <div id="main">
+            <div id="main-top">Main Content Top</div>
+            <div id="main-bottom">Main Content Bottom</div>
+        </div>
+        <div id="widgets">Widgets</div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+</html>
