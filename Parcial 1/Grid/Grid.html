@@ -8,29 +8,88 @@
 <style>
 .grid-container{
     display: grid;
-width: 100vw;
-height: 100vh;
-grid-template-columns: 20% 80%;
-grid-template-rows: 10% 80% 10%;
-grid-template-areas: "enca enca"
-                    "barra conte"
-                    "piepag piepag";
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: "enca enca"
+                        "barra conte"
+                        "piepag piepag";
 }
-#contenedor1{grid-area: enca; background-color: antiquewhite;}
-#contenedor2{grid-area: barra; background-color: yellow;}
-#contenedor3{grid-area: conte; background-color: orange;}
-#contenedor4{grid-area: piepag; background-color: purple; display: flex; justify-content: center;}
 
-.cajaFloat{
+#contenedor1 {
+    grid-area: enca;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 20px; /* Agregamos un padding para separar el logo del borde izquierdo */
+    text-align: justify;
+    color: white;
+}
+
+
+#contenedor2{ 
+    grid-area: barra; 
+    background-color: rgb(216, 216, 216); 
+    padding: 10px; 
+    color: white;
+}
+
+#contenedor3{ 
+    grid-area: conte; 
+    background-color: white; 
+    padding: 10px;
+    text-align: justify;
+}
+
+#contenedor4{ 
+    grid-area: piepag; 
+    background-color: red; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white;
+}
+
+.cajaFloat {
     border: 1px solid blue;
     float: left;
-    width: calc((100%/3) - 30px);
-    height: calc((100%));
+    width: 70px; /* Ajuste en el ancho */
     margin: 10px;
+    box-sizing: border-box; /* Asegura que el ancho incluya bordes */
+    height: auto; /* La altura se ajusta al contenido */
+    text-align: justify;
 }
+
 .cajaFlex{
     border: 1px solid yellow;
     color: yellow;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Ajuste del logo */
+#logo {
+    width: 150px;
+    height: auto;
+    margin-left: 20px; /* Agregamos margen al logo */
+}
+
+
+/* Ajuste de todas las imágenes */
+img {
+    max-width: 100%; /* La imagen no superará el tamaño del contenedor */
+    height: auto; /* Mantiene la proporción */
+    float: left;
+    padding-right: 10px;
+}
+
+/* Escalar imagen en el contenedor de contenido */
+#contenedor3 img {
+    max-width: 50%; /* Ajusta la imagen a un 70% del ancho del contenedor */
+    height: auto;
 }
 
 .cafaFlex1{ flex-grow: 1;}
@@ -40,17 +99,47 @@ grid-template-areas: "enca enca"
 </style>
 <body>
     <div class="grid-container">
+        <!-- Encabezado con logo y título -->
         <div id="contenedor1">
-            <div class="cajaFloat" id="cajaFloat1">cajaflotante1</div>
-            <div class="cajaFloat" id="cajaFloat2">cajaflotante2</div>
-            <div class="cajaFloat" id="cajaFloat3">cajaflotante3</div>
+            <div><img src="./f1_logo.png" alt="Logo" id="logo"></div>
+            <div style="font-size: 24px;">Mi Página Web</div>
+            <div>
+                <div class="cajaFloat" id="cajaFloat1">Inicio</div>
+                <div class="cajaFloat" id="cajaFloat2">Servicios</div>
+                <div class="cajaFloat" id="cajaFloat3">Contacto</div>
+            </div>
         </div>
-        <div id="contenedor2">2</div>
-        <div id="contenedor3">3</div>
+
+        <!-- Barra lateral con enlaces de navegación -->
+        <div id="contenedor2">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenido principal -->
+        <div id="contenedor3">
+            <h2>Fernando Alonso on Newey arriving to Aston Martin</h2>
+            <p>After more than 30 years in Formula 1, winning a combined 25 Drivers' and Constructors' titles with Williams, McLaren and Red Bull, legendary designer Adrian Newey has signed a multi-year deal with Aston Martin. Following months of rumours about what Newey would do next after departing Red Bull, it was confirmed on Tuesday that the 65-year-old will become the Silverstone squad's Managing Technical Partner and a shareholder in the company from March 2025.</p>
+            <p>“I was talking with Lance a few weeks ago [about] the incredible opportunity we have to witness and to work with Lawrence and with everyone in Aston Martin, which we are definitely learning a lot of things [from], on track and off track as well, and it’s part of our growth.”</p>
+            <img src="./AdrianNewey.png" alt="Imagen de Ejemplo">
+            <p>“I would say he was an inspiration,” Alonso said of Newey, referencing the many years they have worked in rival teams. “I think, thanks to Adrian and his talent and cars, we all got better as drivers, as engineers, as teams. We all had to raise the bar thanks to him, to be able to compete.
+
+                “I think [it’s] an incredible day for the team. Lawrence’s vision is taking shape with this [new] building, with Adrian, with [future engine partner] Honda, with [strategic fuel partner] Aramco, with a new wind tunnel… Definitely the team of the future, I would say.”</p>
+            <p>The two-time world champion continued: “For me, it’s going to be an incredible opportunity, professionally, to work with Adrian and to keep wearing this green colour, which I’m very proud to be part of.
+    
+                “I was talking with Lance a few weeks ago [about] the incredible opportunity we have to witness and to work with Lawrence and with everyone in Aston Martin, which we are definitely learning a lot of things [from], on track and off track as well, and it’s part of our growth.”</p>
+        </div>
+
+        <!-- Pie de página con enlaces -->
         <div id="contenedor4">
-            <div class="cajaFlex" id="cajaFlex1">cajaflotante1</div>
-            <div class="cajaFlex" id="cajaFlex2">cajaflotante2</div>
-            <div class="cajaFlex" id="cajaFlex3">cajaflotante3</div>
+            <div class="cajaFlex" id="cajaFlex1">© 2024 Mi Página Web</div>
+            <div class="cajaFlex" id="cajaFlex2"><a href="#" style="color: white;">Términos y Condiciones</a></div>
+            <div class="cajaFlex" id="cajaFlex3"><a href="#" style="color: white;">Privacidad</a></div>
         </div>
     </div>
 </body>
