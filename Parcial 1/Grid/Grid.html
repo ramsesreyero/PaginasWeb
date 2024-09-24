@@ -19,15 +19,39 @@ grid-template-areas: "enca enca"
 #contenedor1{grid-area: enca; background-color: antiquewhite;}
 #contenedor2{grid-area: barra; background-color: yellow;}
 #contenedor3{grid-area: conte; background-color: orange;}
-#contenedor4{grid-area: piepag; background-color: purple;}
+#contenedor4{grid-area: piepag; background-color: purple; display: flex; justify-content: center;}
+
+.cajaFloat{
+    border: 1px solid blue;
+    float: left;
+    width: calc((100%/3) - 30px);
+    height: calc((100%));
+    margin: 10px;
+}
+.cajaFlex{
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+.cafaFlex1{ flex-grow: 1;}
+.cafaFlex3{ flex-grow: 2;}
+.cafaFlex2{ flex-grow: 3;}
 
 </style>
 <body>
     <div class="grid-container">
-        <div id="contenedor1">1</div>
+        <div id="contenedor1">
+            <div class="cajaFloat" id="cajaFloat1">cajaflotante1</div>
+            <div class="cajaFloat" id="cajaFloat2">cajaflotante2</div>
+            <div class="cajaFloat" id="cajaFloat3">cajaflotante3</div>
+        </div>
         <div id="contenedor2">2</div>
         <div id="contenedor3">3</div>
-        <div id="contenedor4">4</div>
+        <div id="contenedor4">
+            <div class="cajaFlex" id="cajaFlex1">cajaflotante1</div>
+            <div class="cajaFlex" id="cajaFlex2">cajaflotante2</div>
+            <div class="cajaFlex" id="cajaFlex3">cajaflotante3</div>
+        </div>
     </div>
 </body>
 </html>
