@@ -1,4 +1,12 @@
+@primary-color: #c40000e3; /* Variable para color primario */
+@secondary-color: #f9f9f9; /* Fondo claro */
+@text-color: #333;
+@light-gray: #eaeaea;
+@gray: gray;
+@border-color: #ddd;
+@shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
+/* Reset básico */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +14,7 @@
 }
 
 body {
-    background-color: #eaeaea; /* Fondo gris claro */
+    background-color: @light-gray; /* Uso de variable */
 }
 
 #contenedor {
@@ -15,82 +23,83 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6em;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    border: 1px solid #ddd; /* Borde */
-    background-color: #f9f9f9; /* Fondo claro */
+    box-shadow: @shadow; /* Uso de variable */
+    border: 1px solid @border-color; /* Uso de variable */
+    background-color: @secondary-color; /* Uso de variable */
 }
 
 header {
-    background-color: #c40000e3; /* Fondo rojo */
+    background-color: @primary-color; /* Uso de variable */
     padding: 0 20px;
     color: white;
-    text-align: center; /* Cambiado de left a center */
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex; /* Usamos flexbox */
-    justify-content: center; /* Centramos el contenido horizontalmente */
-    align-items: center; /* Alineamos verticalmente */
-    gap: 50px; /* Espacio entre el logo y el menú de navegación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     height: 70px;
-}
 
-h1 {
-    margin: 0; /* Eliminamos el margen del título */
-    font-size: 2em;
-    margin-bottom: 20px;
-}
+    h1 {
+        margin: 0;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
 
-#hoursago{
-    color: rgb(158, 158, 158);
-    font-size: 0.8em;
+    nav {
+        display: flex;
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            line-height: 70px;
+        }
+    }
 }
 
 #logo {
-    height: 30px; /* Ajusta la altura del logo */
+    height: 30px;
     width: 120px;
 }
 
-nav {
-    display: flex; /* Usamos flex para organizar los enlaces */
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    line-height: 70px; /* Alinea verticalmente los enlaces */
+#hoursago {
+    color: rgb(158, 158, 158);
+    font-size: 0.8em;
 }
 
 h3 {
     font-size: 1em;
     line-height: 1em;
-    color: gray;
+    color: @gray; /* Uso de variable */
     margin-bottom: 20px;
 }
 
 p {
     font-size: 1.1em;
-    color: #333;
+    color: @text-color; /* Uso de variable */
     text-align: justify;
     margin-bottom: 25px;
 }
 
 #imgarticulo {
-    float: left; /* Imagen alineada a la izquierda */
+    float: left;
     margin-right: 20px;
     width: 430px;
     height: 250px;
-    border-radius: 10px; /* Bordes redondeados */
-}
-#imgarticulo2 {
-    display: block; /* Asegura que la imagen sea un bloque */
-    margin: 0 auto 10px; /* Centra la imagen y agrega margen en la parte inferior */
-    width: 820px;
-    height: 500px;
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px;
 }
 
-#readmore{
-    color: #c40000e3;
+#imgarticulo2 {
+    display: block;
+    margin: 0 auto 10px;
+    width: 820px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+#readmore {
+    color: @primary-color; /* Uso de variable */
     text-decoration: underline;
 }
