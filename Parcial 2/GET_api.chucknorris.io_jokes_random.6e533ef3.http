@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+cf-cache-status: DYNAMIC
+cf-ray: 8cb45894ea3283a5-DFW
+connection: keep-alive
+content-encoding: br
+content-type: application/json
+date: Mon, 30 Sep 2024 12:51:44 GMT
+nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+report-to: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727700703&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=n7CgzfsdCwEEBeNMwnhWKCxQBp0p3Sk9uN%2FLPRKc8D8%3D"}]}
+reporting-endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1727700703&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=n7CgzfsdCwEEBeNMwnhWKCxQBp0p3Sk9uN%2FLPRKc8D8%3D
+server: cloudflare
+transfer-encoding: chunked
+vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+via: 1.1 vegur
+
+{
+  "categories": [],
+  "created_at": "2020-01-05 13:42:25.099703",
+  "icon_url": "https://api.chucknorris.io/img/avatar/chuck-norris.png",
+  "id": "lI107OLVQUW6gO-c3iMIiA",
+  "updated_at": "2020-01-05 13:42:25.099703",
+  "url": "https://api.chucknorris.io/jokes/lI107OLVQUW6gO-c3iMIiA",
+  "value": "Chuck Norris has a life size tattoo of his face on his face. Rush Limbaugh has a life size tattoo of Chuck Norris' ass on his face."
+}
