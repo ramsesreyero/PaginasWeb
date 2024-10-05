@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Formulario Mejorado</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f9f9f9;
+        }
+        .pure-button-primary {
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="reset"], input[type="button"] {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    <style>
-    body{
-        background-color: rgb(60, 60, 60);
-    }
-    .nom{
-        background-color: white;
-    }
-    </style>
     <form action="#" method="POST" enctype="multipart/form-data" class="pure-form">
+        <label for="nom">Nombre</label>
+        <input type="text" name="nombre" id="nom" placeholder="Ingresa tu nombre">
 
-        <label form="nom">Nombre</label>
-        <input type="text" name="nombre" id="nom">
-        <label form="nom">ApellidoP</label>
-        <input type="text" name="ApellidoP" id="apep">
-        <label form="nom">ApellidoM</label>
-        <input type="text" name="ApellidoM" id="apem">
+        <label for="apep">Apellido Paterno</label>
+        <input type="text" name="ApellidoP" id="apep" placeholder="Ingresa tu apellido paterno">
 
-        <input class="pure-button pure-button-primary" type="submit">
-        <input type="button">
-        <input type="reset">
+        <label for="apem">Apellido Materno</label>
+        <input type="text" name="ApellidoM" id="apem" placeholder="Ingresa tu apellido materno">
 
+        <input class="pure-button pure-button-primary" type="submit" value="Enviar">
+        <input class="pure-button" type="reset" value="Restablecer">
     </form>
 </body>
 </html>
