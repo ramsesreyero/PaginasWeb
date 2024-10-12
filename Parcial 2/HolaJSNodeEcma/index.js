@@ -1,5 +1,5 @@
 import { say } from 'cowsay';
 
-console.log(say({ text: 'grazing in the browser' }));
+console.log(say({ text: 'Hola Mundo' }));
 
 console.log("Hola mundo");
