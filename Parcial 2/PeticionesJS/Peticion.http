@@ -1,0 +1,4 @@
+GET https://api.openweathermap.org/data/2.5/weather?q=Nuevo%20Laredo,mx&appid=bdb231a2746958dabcb7e6c116ccd74a&units=metric&lang=es HTTP/1.1
+Host: api.openweathermap.org
+Accept: application/json
+Content-Type: application/json

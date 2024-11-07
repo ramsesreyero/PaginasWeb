@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Fetch</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <!-- Import jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Import Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>Consulta de Clima</header>
+    <div class="container">
+        <div id="res">
+            <h2>Resultado del Clima</h2>
+            <p>Detalles del clima aquí...</p>
+        </div>
+    </div>
+    <button id="btnFetch">Consultar Clima Fetch</button>
+    <button id="btnFetchAsync">Consultar Clima Async Fetch</button>
+    <button id="btnXMLHttpRequest">Consultar Clima XMLHttpRequest</button>
+    <button id="btnJQuery">Consultar Clima jQuery</button>
+    <button id="btnAxios">Consultar Clima Axios</button>
+    
+    <div id="res"></div> 
+    <img id="weatherImage" src="" alt="Clima" style="display:none;"> 
+
+    <script>
+        const weatherApiUrl = 'https://api.openweathermap.org';
+        const apiParams = '?q=Nuevo%20Laredo,mx&appid=bdb231a2746958dabcb7e6c116ccd74a&units=metric&lang=es';
+
+        function displayWeather(data) {
+            document.getElementById('res').innerHTML = '';
+            document.getElementById('weatherImage').style.display = 'none';
+
+            const city = document.createElement('h2');
+            city.textContent = `Ciudad: ${data.name}`;
+
+            const temp = document.createElement('p');
+            temp.textContent = `Temperatura: ${data.main.temp}°C`;
+
+            const weatherDescription = document.createElement('p');
+            weatherDescription.textContent = `Clima: ${data.weather[0].description}`;
+
+            displayWeatherImage(data.weather[0].description);
+
+            document.getElementById('res').appendChild(city);
+            document.getElementById('res').appendChild(temp);
+            document.getElementById('res').appendChild(weatherDescription);
+        }
+
+        function displayWeatherImage(description) {
+            const imageElement = document.getElementById('weatherImage');
+            imageElement.src = '';
+
+            if (description.includes("baja") && description.includes("temperatura")) {
+                imageElement.src = 'images/advertencia-temperatura-baja.png';
+            } else if (description.includes("baja") && description.includes("humedad")) {
+                imageElement.src = 'images/humedad-baja.png';
+            } else if (description.includes("ácida")) {
+                imageElement.src = 'images/lluvia-acida.png';
+            } else if (description.includes("extremo")) {
+                imageElement.src = 'images/clima-extremo.png';
+            } else if (description.includes("granizada")) {
+                imageElement.src = 'images/granizada.png';
+            } else if (description.includes("nube oscura")) {
+                imageElement.src = 'images/nube-oscura.png';
+            } else if (description.includes("helada")) {
+                imageElement.src = 'images/lluvia-helada.png';
+            } else if (description.includes("tormenta de viento")) {
+                imageElement.src = 'images/tormenta-de-viento.png';
+            } else if (description.includes("tormenta de nieve")) {
+                imageElement.src = 'images/tormenta-de-nieve.png';
+            } else {
+                imageElement.src = 'images/default.png';
+            }
+
+            if (imageElement.src) {
+                imageElement.style.display = 'block';
+            }
+        }
+
+        // Fetch API
+        function fetchWeather() {
+            const url = `${weatherApiUrl}/data/2.5/weather${apiParams}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => displayWeather(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Async Fetch API
+        async function fetchWeatherAsync() {
+            const url = `${weatherApiUrl}/data/2.5/weather${apiParams}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                displayWeather(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // XMLHttpRequest
+        function fetchWeatherXMLHttpRequest() {
+            const url = `${weatherApiUrl}/data/2.5/weather${apiParams}`;
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    displayWeather(data);
+                } else {
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Error:', xhr.statusText);
+            };
+            xhr.send();
+        }
+
+        // jQuery
+        function fetchWeatherJQuery() {
+            const url = `${weatherApiUrl}/data/2.5/weather${apiParams}`;
+            $.get(url)
+                .done(data => displayWeather(data))
+                .fail(error => console.error('Error:', error));
+        }
+
+        // Axios
+        function fetchWeatherAxios() {
+            const url = `${weatherApiUrl}/data/2.5/weather${apiParams}`;
+            axios.get(url)
+                .then(response => displayWeather(response.data))
+                .catch(error => console.error('Error:', error));
+        }
+
+        document.getElementById('btnFetch').addEventListener('click', fetchWeather);
+        document.getElementById('btnFetchAsync').addEventListener('click', fetchWeatherAsync);
+        document.getElementById('btnXMLHttpRequest').addEventListener('click', fetchWeatherXMLHttpRequest);
+        document.getElementById('btnJQuery').addEventListener('click', fetchWeatherJQuery);
+        document.getElementById('btnAxios').addEventListener('click', fetchWeatherAxios);
+    </script>
+</body>
+</html>
