@@ -1,19 +1,19 @@
 const express = require('express');
 const app = express();
 
-app.use(express.json());//parsea para poder ver los valores abajo4
+app.use(express.json());//parsea para poder ver los valores abajo
 app.use(express.text());
 
 
 const PORT = 8080;
 
 app.get('/administrativos', (req, res) => {
-  console.log(req.query)
+  console.log(req.query.control)
   res.send('Servidor Contestando a peticion GET administrativos');
 });
 
 app.get('/maestros', (req, res) => {
-  console.log(req.body)
+  console.log(req.body.control)
   res.send('Servidor Contestando a peticion GET maestros');
 });
 
