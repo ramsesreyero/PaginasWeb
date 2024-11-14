@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer'); 
+const cors = require('cors'); 
 const path = require('path');
 const app = express();
 
@@ -12,6 +13,7 @@ const upload = multer({ dest: folder });
 // Middleware para procesar el formulario
 app.use(express.json()); // Para procesar JSON
 app.use(express.urlencoded({ extended: true })); // Para procesar datos de formularios
+app.use(cors());
 
 // Ruta para manejar el formulario
 app.post('/formulario', upload.single('archivo'), (req, res) => {
