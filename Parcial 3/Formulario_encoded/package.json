@@ -1,0 +1,17 @@
+{
+  "name": "formulario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Formulario.js",
+  "scripts": {
+    "start": "concurrently \"nodemon Formulario.js\" \"start http://localhost:8080\""
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "node": "^22.11.0",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
