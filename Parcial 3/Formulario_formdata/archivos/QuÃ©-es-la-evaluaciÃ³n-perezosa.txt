@@ -1,0 +1,90 @@
+¿Qué es la evaluación perezosa?
+
+A) Realiza todos los cálculos de inmediato.
+B) Calcula valores solo cuando son necesarios. ✅
+C) Ejecuta todas las expresiones sin importar su uso.
+D) Duplica el cálculo de cada valor.
+¿Principal ventaja de la evaluación perezosa?
+
+A) Ocupa más memoria.
+B) Simplifica la codificación.
+C) Ahorra memoria y CPU. ✅
+D) Duplica los recursos.
+¿Qué es una expresión diferible?
+
+A) Una expresión que se evalúa solo cuando se necesita. ✅
+B) Una expresión que siempre se evalúa de inmediato.
+C) Un cálculo automático de valores.
+D) Una estructura de datos repetitiva.
+¿Para qué sirve la memoización?
+
+A) Recalcular siempre los valores.
+B) Evitar cálculos repetidos guardando resultados. ✅
+C) Guardar valores duplicados en memoria.
+D) Eliminar datos innecesarios.
+¿Lenguaje con evaluación perezosa por defecto?
+
+A) Python.
+B) JavaScript.
+C) Haskell. ✅
+D) C++.
+¿Cómo implementar evaluación perezosa en Python?
+
+A) Con generadores (yield) e itertools. ✅
+B) Con ciclos for estándar.
+C) Con variables globales.
+D) Con clases de datos.
+¿Qué es una lista infinita?
+
+A) Lista que siempre se calcula completamente.
+B) Lista que genera valores solo cuando se necesitan. ✅
+C) Estructura de datos fija.
+D) Lista limitada de valores.
+Ejemplo de evaluación perezosa en Haskell:
+
+A) [1..], generando solo los primeros 10 con take 10. ✅
+B) for i in range(10): print(i).
+C) naturales = [1, 2, 3].
+D) [1, 2, 3, ..., 100].
+Técnica en JavaScript para evaluar valores bajo demanda:
+
+A) Promise o Future. ✅
+B) yield.
+C) const lista = [1, 2, 3].
+D) lazy.
+¿Por qué usar evaluación perezosa en archivos grandes?
+
+A) Lee solo las partes necesarias. ✅
+B) Carga todo el archivo en memoria.
+C) Duplica los archivos grandes.
+D) Borra los archivos temporales.
+¿Qué permite el filtrado tardío?
+
+A) Aplicar transformaciones solo cuando son requeridas. ✅
+B) Procesar todos los datos sin condiciones.
+C) Crear listas infinitas sin restricciones.
+D) Generar datos duplicados.
+¿Ventaja de evaluación perezosa en bases de datos?
+
+A) Recupera solo los registros necesarios. ✅
+B) Duplica las consultas.
+C) Carga todos los datos en memoria.
+D) Optimiza las bases de datos.
+Diferencia entre evaluación estricta y perezosa:
+
+A) La estricta evalúa de inmediato; la perezosa, solo cuando es necesario. ✅
+B) La perezosa es siempre automática.
+C) La estricta duplica todos los valores.
+D) Ambas evaluaciones son iguales.
+¿Palabra clave de Scala para evaluación perezosa?
+
+A) defer.
+B) yield.
+C) lazy. ✅
+D) delay.
+¿Cuándo es útil la evaluación perezosa en UI?
+
+A) En lazy-loading, para cargar elementos solo cuando se necesitan. ✅
+B) Para procesar toda la interfaz de inmediato.
+C) Para duplicar las interfaces de usuario.
+D) Para cargar datos innecesarios.
