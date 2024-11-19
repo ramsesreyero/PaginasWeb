@@ -4,22 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/zod@3.11.6/lib/index.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('pdfForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita el envío normal del formulario
+
+                const formData = new FormData(this);
+
+                fetch('http://localhost:8080/formulario', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Respuesta del servidor: ' + JSON.stringify(data));
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Enviar Datos y Ver PDF</h1>
-    <form id="pdfForm" action="http://localhost:8080/formulario" method="POST" enctype="multipart/form-data" target="pdfWindow">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" required><br><br>
+    <form id="pdfForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
         
-        <label for="contenido">Contenido:</label>
-        <textarea id="contenido" name="contenido" required></textarea><br><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
         
-        <label for="archivo">Subir archivo (opcional):</label>
-        <input type="file" id="archivo" name="archivo"><br><br>
+        <label for="archivo">Subir imagen (opcional):</label>
+        <input type="file" id="archivo" name="archivo" accept="image/*"><br><br>
         
         <button type="submit">Enviar y Ver PDF</button>
     </form>
-
-    <iframe name="pdfWindow" style="display:none;"></iframe>
 </body>
 </html>

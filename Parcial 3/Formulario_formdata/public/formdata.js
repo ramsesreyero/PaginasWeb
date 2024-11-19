@@ -9,7 +9,11 @@ document.getElementById('pdfForm').addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
+        console.log('URL del PDF:', data.pdfUrl); // Imprimir la URL en la consola
         alert('Respuesta del servidor: ' + JSON.stringify(data));
+        // Abrir el PDF en una nueva pestaña
+        const pdfUrl = data.pdfUrl;
+        window.open(pdfUrl, '_blank');
     })
     .catch(error => {
         console.error('Error:', error);
