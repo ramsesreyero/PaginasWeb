@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de PDF</title>
+    <script src="index.js" defer></script> <!-- Asegúrate de que la ruta sea correcta -->
+</head>
+<body>
+    <h1>Generador de PDF</h1>
+    <form action="/generate-pdf" method="POST" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" placeholder="Nombre" required>
+        <br><br>
+        <label for="surname">Apellido:</label>
+        <input type="text" name="surname" placeholder="Apellido" required>
+        <br><br>
+        <label for="file">Archivo (opcional):</label>
+        <input type="file" name="file">
+        <br><br>
+        <input type="submit" value="Generar PDF">
+    </form>
+</body>
+</html>
