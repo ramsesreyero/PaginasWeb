@@ -46,6 +46,31 @@ app.post('/generate-pdf',
             page.drawText(`Nombre: ${name}`, { x: 50, y: 350 });
             page.drawText(`Apellido: ${surname}`, { x: 50, y: 320 });
 
+            // Agregar contenido del archivo (si existe)
+            if (req.file) {
+                const fileType = req.file.mimetype;
+            
+                if (fileType === 'text/plain') {
+                    const fileContent = req.file.buffer.toString(); // Convierte el buffer a texto
+                    page.drawText(`Contenido del archivo:\n${fileContent}`, { x: 50, y: 290 });
+                } else if (fileType === 'image/jpeg' || fileType === 'image/png') {
+                    // Manejar imágenes
+                    const image = await pdfDoc.embedJpg(req.file.buffer); // Para JPEG
+                    // const image = await pdfDoc.embedPng(req.file.buffer); // Para PNG
+                    page.drawImage(image, {
+                        x: 50,
+                        y: 70,
+                        width: 150,
+                        height: 150,
+                    });
+                } else if (fileType === 'application/pdf') {
+                    // Manejar archivos PDF (puedes incluir solo un mensaje o combinar PDFs)
+                    page.drawText('Se subió un archivo PDF, pero no se puede mostrar en este PDF.', { x: 50, y: 290 });
+                } else {
+                    page.drawText(`Tipo de archivo no soportado.`, { x: 50, y: 290 });
+                }
+            }
+
             const pdfBytes = await pdfDoc.save();
 
             // Guardar el PDF en el sistema de archivos
@@ -55,8 +80,8 @@ app.post('/generate-pdf',
             // Redirigir al navegador para abrir el PDF
             res.redirect('/generated.pdf');
         } catch (error) {
-            console.error('Error al generar el PDF:', error.message);
-            return res.status(500).send('Error al generar el PDF');
+            console.error('Error al generar el PDF:', error); // Log the error
+            return res.status(500).send('Error al generar el PDF: ' + error.message);
         }
     }
 );
